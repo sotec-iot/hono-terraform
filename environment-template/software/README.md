@@ -17,7 +17,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_software"></a> [software](#module\_software) | git@git.sotec.eu:scs/iot-core-hono/hono-terraform.git//software | main |
+| <a name="module_software"></a> [software](#module\_software) | git@github.com:sotec-iot/hono-extras.git//terraform/software | terraform |
 
 ## Resources
 
