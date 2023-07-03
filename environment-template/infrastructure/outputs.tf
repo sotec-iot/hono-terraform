@@ -18,6 +18,11 @@ output "zone" {
   description = "Zone in which the Cluster will be deployed"
 }
 
+output "http_static_ip" {
+  value       = module.infrastructure.http_static_ip
+  description = "Static IP for the HTTP Workload"
+}
+
 output "mqtt_static_ip" {
   value       = module.infrastructure.mqtt_static_ip
   description = "Static IP for the MQTT Workload"
@@ -62,5 +67,16 @@ output "device_communication_static_ip" {
 output "cloud_endpoints_key_file" {
   value       = module.infrastructure.cloud_endpoints_key_file
   description = "Service Account Key File for Cloud Endpoints Service Account"
+  sensitive   = true
+}
+
+output "cert_manager_sa_account_id" {
+  value       = module.infrastructure.cert_manager_sa_account_id
+  description = "Account id of the cert-manager Service Account"
+}
+
+output "cert_manager_sa_key_file" {
+  value       = module.infrastructure.cert_manager_sa_key_file
+  description = "Service Account Key File for cert-manager Service Account"
   sensitive   = true
 }
