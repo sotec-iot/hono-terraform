@@ -13,7 +13,7 @@ module "software" {
   service_name_communication          = data.terraform_remote_state.infrastructure.outputs.service_name_communication
   device_communication_static_ip_name = data.terraform_remote_state.infrastructure.outputs.device_communication_static_ip_name
   grafana_static_ip_name              = try(data.terraform_remote_state.infrastructure.outputs.grafana_static_ip_name[0], "")
-  grafana_expose_externally           = try(data.terraform_remote_state.infrastructure.outputs.grafana_expose_externally[0], false)
+  grafana_expose_externally           = data.terraform_remote_state.infrastructure.outputs.grafana_expose_externally
   ssl_policy_name                     = data.terraform_remote_state.infrastructure.outputs.ssl_policy_name
   cloud_endpoints_key_file            = data.terraform_remote_state.infrastructure.outputs.cloud_endpoints_key_file
   cert_manager_sa_account_id          = try(data.terraform_remote_state.infrastructure.outputs.cert_manager_sa_account_id[0], "")
