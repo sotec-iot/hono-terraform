@@ -1,5 +1,5 @@
 module "software" {
-  source = "git@github.com:sotec-iot/hono-extras.git//terraform/software?ref=terraform"
+  source = "git@github.com:sotec-iot/hono-extras.git//terraform/software?ref=terraform-v1.0.0"
 
   project_id                          = data.terraform_remote_state.infrastructure.outputs.project_id
   cluster_name                        = data.terraform_remote_state.infrastructure.outputs.cluster_name
