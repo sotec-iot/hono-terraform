@@ -108,18 +108,19 @@ grafana_expose_externally = local.grafana_expose_externally
 ### Changing an object variable
 To change the properties within a variable of type object you have to follow the same steps as for a simple variable (described above) except you have to provide an object in the locals.tf file.
 For object variables that have optional properties, it is sufficient to provide only the non-optional properties and the properties you want to change.<br/>
-Example 1 - change the property `enabled` within the variable `mqtt_adapter`:
+Example 1 - change the property `enable` within the object property `all` within the variable `mqtt_rate_limiting`:
 ```
-mqtt_adapter = {enabled = true}
+mqtt_rate_limiting = {all = {enable = true}}
 ```
-Example 2 - change the properties of `chart_version` and `algorithm` within the object property `advanced_load_balancer` within the variable `mqtt_adapter`:
+Example 2 - change the properties of `enable` and `threshold_count` within the object property `all` within the variable `mqtt_rate_limiting`:
 ```
-mqtt_adapter = {advanced_load_balancer = {chart_version = "1.0.0", algorithm = "roundrobin"}}
+mqtt_rate_limiting = {all = {enable = true, threshold_count = 750}}
 ```
 
 ## Compatibility chart
 | Terraform Version | Compatible Hono Helm Chart Versions |
 |-------------------|-------------------------------------|
 | 1.0.0             | 2.7.0-0                             |
+| 1.1.0             | 2.7.1-0                             |
 
 The Terraform version is set in both main.tf files (Infrastructure and Software).
